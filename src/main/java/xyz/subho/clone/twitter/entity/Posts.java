@@ -38,6 +38,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
+import xyz.subho.clone.twitter.model.PostModel;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
@@ -109,4 +111,57 @@ public class Posts {
   public long decrementRepostCount() {
     return (repostCount < 1) ? 0 : --repostCount;
   }
+
+
+  public long getLikeCount() {
+	//implement this
+	return 0;
+  }
+
+
+  public Map<String, Date> getHashtags() {
+	// TODO Auto-generated method stub
+	return null;
+  }
+
+
+  public Map<String, Date> getMentions() {
+	// TODO Auto-generated method stub
+	return null;
+  }
+
+public PostModel getUsers() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public void setHashtags(Map<String, Date> hashtags2) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setLikeCount(long l) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setMentions(Map<String, Date> mentions2) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setUsers(Users byId) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setPostHashtags(List<HashtagPosts> hashtagPosts) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setRepostCount(long l) {
+	// TODO Auto-generated method stub
+	
+}
 }

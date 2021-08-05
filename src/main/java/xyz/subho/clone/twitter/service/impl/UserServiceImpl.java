@@ -22,10 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import xyz.subho.clone.twitter.entity.Users;
 import xyz.subho.clone.twitter.model.UserModel;
 import xyz.subho.clone.twitter.repository.UsersRepository;
@@ -35,7 +38,7 @@ import xyz.subho.clone.twitter.utility.Mapper;
 @Service
 public class UserServiceImpl implements UserService {
 
-  @Autowired private UsersRepository usersRepository;
+  @Autowired @Lazy private UsersRepository usersRepository;
 
   @Autowired
   @Qualifier("UserMapper")

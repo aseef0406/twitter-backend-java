@@ -22,6 +22,8 @@ import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
+
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +45,8 @@ import xyz.subho.clone.twitter.utility.Utility;
 @Slf4j
 public class UserController {
 
+  Logger log;
+	
   @Autowired private UserService userService;
 
   @Autowired private Utility utility;

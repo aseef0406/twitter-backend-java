@@ -106,4 +106,29 @@ public class Users {
   public void removeFollowing(final UUID userId) {
     following.remove(userId);
   }
+
+	
+  public Map<UUID, Date> getFollower() {
+		return follower;
+  }
+
+  public Map<UUID, Date> getFollowing() {
+	return following;
+  }
+
+public void setFollowerCount(long l) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setVerified(boolean b) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setFollowingCount(long l) {
+	// TODO Auto-generated method stub
+	
+}
+  
 }

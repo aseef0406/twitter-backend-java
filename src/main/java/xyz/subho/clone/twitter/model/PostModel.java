@@ -38,4 +38,92 @@ public class PostModel {
   private Date timestamp;
   private List<String> hashtags = new ArrayList<>();
   private List<String> mentions = new ArrayList<>();
+	
+  public UUID getId() {
+		return id;
+	}
+	
+  public void setId(UUID id) {
+		this.id = id;
+	}
+	
+  public String getText() {
+		return text;
+	}
+	
+  public void setText(String text) {
+		this.text = text;
+	}
+	
+  public UUID getUserId() {
+		return userId;
+	}
+	
+  public void setUserId(UUID userId) {
+		this.userId = userId;
+	}
+	
+  public List<String> getImages() {
+		return images;
+	}
+	
+  public void setImages(List<String> images) {
+		this.images = images;
+	}
+	
+  public Long getLikeCount() {
+		return likeCount;
+	}
+	
+  public void setLikeCount(Long likeCount) {
+		this.likeCount = likeCount;
+	}
+	
+  public Long getRepostCount() {
+		return repostCount;
+	}
+	
+  public void setRepostCount(Long repostCount) {
+		this.repostCount = repostCount;
+	}
+	
+  public UUID getOriginalPostId() {
+		return originalPostId;
+	}
+	
+  public void setOriginalPostId(UUID originalPostId) {
+		this.originalPostId = originalPostId;
+	}
+	
+  public UUID getReplyToId() {
+		return replyToId;
+	}
+	
+  public void setReplyToId(UUID replyToId) {
+		this.replyToId = replyToId;
+	}
+	
+  public Date getTimestamp() {
+		return timestamp;
+	}
+	
+  public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+	
+  public List<String> getHashtags() {
+		return hashtags;
+	}
+	
+  public void setHashtags(List<String> hashtags) {
+		this.hashtags = hashtags;
+	}
+	
+  public List<String> getMentions() {
+		return mentions;
+	}
+	
+  public void setMentions(List<String> mentions) {
+		this.mentions = mentions;
+	}
 }

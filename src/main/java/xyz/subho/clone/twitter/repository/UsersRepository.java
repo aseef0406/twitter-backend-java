@@ -19,9 +19,13 @@
 package xyz.subho.clone.twitter.repository;
 
 import java.util.UUID;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import xyz.subho.clone.twitter.entity.Users;
 
+@Repository
 public interface UsersRepository extends JpaRepository<Users, UUID> {
 
   public Users findByUsername(String username);

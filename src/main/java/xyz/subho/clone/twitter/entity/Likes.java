@@ -61,4 +61,14 @@ public class Likes {
   @CreationTimestamp private Date createdAt;
 
   @UpdateTimestamp private Date updatedAt;
+
+public void setPosts(Posts post) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setUsers(Users user) {
+	// TODO Auto-generated method stub
+	
+}
 }

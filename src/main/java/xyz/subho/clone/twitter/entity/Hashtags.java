@@ -62,4 +62,34 @@ public class Hashtags {
   @CreationTimestamp private Date createdAt;
 
   @UpdateTimestamp private Date updatedAt;
+
+
+  public int getRecentPostCount() {
+	// TODO Auto-generated method stub
+	return 0;
+  }
+
+
+public Object getTag() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+public Object setRecentPostCount(int i) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+public void setRecentPostCount(long l) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+public void setTag(String notPresentTag) {
+	// TODO Auto-generated method stub
+	
+}
 }

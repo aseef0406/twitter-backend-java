@@ -61,4 +61,16 @@ public class HashtagPosts {
   @CreationTimestamp private Date createdAt;
 
   @UpdateTimestamp private Date updatedAt;
+
+	
+  public void setHashtags(Hashtags hashtag) {
+		// TODO Auto-generated method stub
+		
+  }
+
+
+public void setPosts(Posts post) {
+	// TODO Auto-generated method stub
+	
+}
 }

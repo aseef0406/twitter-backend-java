@@ -23,5 +23,6 @@ import lombok.Value;
 @Value
 public class AuthenticationResponse {
 
-  private final String jwt;
+  private final String jwt = null;
+  
 }

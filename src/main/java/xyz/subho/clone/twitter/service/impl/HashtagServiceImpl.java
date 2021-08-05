@@ -26,6 +26,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -40,10 +41,10 @@ import xyz.subho.clone.twitter.utility.Mapper;
 
 @Service
 public class HashtagServiceImpl implements HashtagService {
+	
+  @Autowired @Lazy private HashtagsRepository hashtagsRepository;
 
-  @Autowired private HashtagsRepository hashtagsRepository;
-
-  @Autowired private HashtagPostsRepository hashtagPostsRepository;
+  @Autowired @Lazy private HashtagPostsRepository hashtagPostsRepository;
 
   @Autowired
   @Qualifier("HashtagMapper")
@@ -115,7 +116,7 @@ public class HashtagServiceImpl implements HashtagService {
 
   private Set<String> fetchExistingTags(List<Hashtags> hashTags) {
     if (!CollectionUtils.isEmpty(hashTags)) {
-      return hashTags.stream().map(hTag -> hTag.getTag()).collect(Collectors.toSet());
+      return null;//hashTags.stream().map(hTag -> hTag.getTag()).collect(Collectors.toSet());
     }
     return new HashSet<>();
   }

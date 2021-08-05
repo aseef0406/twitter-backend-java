@@ -22,11 +22,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import lombok.extern.slf4j.Slf4j;
+
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import lombok.extern.slf4j.Slf4j;
 import xyz.subho.clone.twitter.entity.HashtagPosts;
 import xyz.subho.clone.twitter.entity.Likes;
 import xyz.subho.clone.twitter.entity.Posts;
@@ -47,18 +51,20 @@ import xyz.subho.clone.twitter.utility.Mapper;
 @Service
 @Slf4j
 public class PostServiceImpl implements PostService {
+	
+	Logger log;
 
-  @Autowired private PostsRepository postsRepository;
+  @Autowired @Lazy private PostsRepository postsRepository;
 
-  @Autowired private HashtagPostsRepository hashtagPostRepository;
+  @Autowired @Lazy private HashtagPostsRepository hashtagPostRepository;
 
-  @Autowired private UserService userService;
+  @Autowired @Lazy private UserService userService;
 
-  @Autowired private HashtagService hashtagService;
+  @Autowired @Lazy private HashtagService hashtagService;
 
-  @Autowired private LikesRepository likeRepository;
+  @Autowired @Lazy private LikesRepository likeRepository;
 
-  @Autowired private UsersRepository usersRepository;
+  @Autowired @Lazy private UsersRepository usersRepository;
 
   @Autowired
   @Qualifier("PostMapper")
@@ -150,12 +156,12 @@ public class PostServiceImpl implements PostService {
     var user = userMapper.transformBack(userService.getUserByUserId(userId));
 
     try {
-      likeRepository.deleteByPostsAndUsers(post, user);
-      postsRepository.save(post);
-      return post.getLikeCount();
+	      likeRepository.deleteByPostsAndUsers(post, user);
+	      postsRepository.save(post);
+	      return post.getLikeCount();
     } catch (Exception excp) {
-      log.error("Cannot Save LIKES Entity");
-      throw new ErrorSavingEntityToDatabaseException("Cannot Save to Database");
+	      log.error("Cannot Save LIKES Entity");
+	      throw new ErrorSavingEntityToDatabaseException("Cannot Save to Database");
     }
   }
 }
